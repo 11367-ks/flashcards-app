@@ -26,7 +26,7 @@
         android:gravity="start|top"
         android:hint="Enter short description"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/createButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
         tools:srcCompat="@drawable/anki_icon_svg" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/createButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Create flashcard"
