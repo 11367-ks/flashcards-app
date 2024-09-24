@@ -1,0 +1,27 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: rest_api_flashcards
+    volumes:
+      - ./db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+      
+  phpserver:
+    image: phppdo
+    container_name: php-server
+    ports:
+      - 80:80
+    volumes:
+      - './php/:/var/www/html/'
+    depends_on:
+      - db
