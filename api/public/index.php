@@ -11,7 +11,7 @@ switch ($method) {
         getFlashcards($pdo);
         break;
     case 'POST':
-        echo "used POST";
+        postFlashcard($pdo, $input);
         break;
     case 'PUT':
         echo "used PUT";
@@ -30,4 +30,10 @@ function getFlashcards($pdo)
     $stmt->execute();
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($result);
+}
+
+function postFlashcard($pdo, $input){
+    $stmt = $pdo->prepare("INSERT INTO flashcards (question, answer) VALUES (:question, :answer)");
+    $stmt->execute(['question' => $input['question'], 'answer' => $input['answer']]);
+    echo json_encode(['message' => 'User updated successfully']);
 }
