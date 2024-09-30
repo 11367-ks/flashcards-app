@@ -35,7 +35,7 @@ public class CreateCollectionActivity extends AppCompatActivity {
         });
         createButton.setOnClickListener(view -> {
             String jsonInputString = String.format("{\"question\" : \"%s\", \"answer\" : \"%s\"}", questionEditText.getText().toString(), answerEditText.getText().toString());
-            HttpURLConnection con = null;
+            HttpURLConnection con;
             try {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
