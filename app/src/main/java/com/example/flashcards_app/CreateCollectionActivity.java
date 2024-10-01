@@ -38,7 +38,6 @@ public class CreateCollectionActivity extends AppCompatActivity {
             HttpURLConnection con;
             try {
                 // Single thread networking only for test purposes
-                // TODO: split networking into multiple threads
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
                 URL url = new URL("http://10.0.2.2/public/index.php");
