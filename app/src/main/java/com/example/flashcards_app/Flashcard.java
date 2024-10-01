@@ -4,6 +4,10 @@ public class Flashcard {
     private int id;
     private String question, answer;
 
+//    public Flashcard(int id){
+//        this.id = id;
+//    }
+
     public int getId() {
         return id;
     }
