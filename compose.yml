@@ -17,7 +17,8 @@ services:
       - 8080:80
       
   phpserver:
-    image: phppdo
+    image: phpapi
+    build: .
     container_name: php-server
     ports:
       - 80:80
